@@ -1,0 +1,28 @@
+{% if this.data is defined and this.data | length > 0 %}
+    <div class="card card-stretch {{ this.separated ? 'bg-transparent shadow-none' : '' }}">
+        <div class="nk-tb-list {{ this.separated ? 'is-separate' : '' }}">
+            <div class="nk-tb-item nk-tb-head">
+                <twig:block name="header"></twig:block>
+            </div>
+
+            {% for item in this.data %}
+                <div class="nk-tb-item">
+                    <twig:block name="content"></twig:block>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% if not this.disablePagination %}
+        {% if this.data is defined and this.data.getPageCount > 1 %}
+            <div class="card">
+                <div class="card-inner p-3">
+                    <div class="d-flex justify-content-center">
+                        <twig:DashlitePagination :data="this.data" />
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+{% else %}
+    <twig:DashliteEmptyStateCard :path="this.emptyStatePath" :action="this.emptyStateAction" />
+{% endif %}

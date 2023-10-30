@@ -1,0 +1,66 @@
+{% apply spaceless %}
+<!DOCTYPE html>
+<html lang="{{ app.request.locale() | default('fr') }}">
+        <head>
+            <meta charset="utf-8">
+            <meta name="author" content="devscast">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="shortcut icon" href="{{ asset('/images/logo.png') }}">
+            <title>{% block title %}{% endblock %} | administration | {{ devscast_dashlite.application.name }}</title>
+
+            {# PWA support #}
+            <meta name="theme-color" content="#05FFBA">
+            <link rel="manifest" href="{{ asset('manifest.json') }}">
+
+            {# PWA Support IOS #}
+            <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('images/icons/logo/maskable_icon_x192.png') }}">
+            <link rel="apple-touch-icon" sizes="512x512" href="{{ asset('images/icons/logo/maskable_icon_x512.png') }}">
+            <link rel="apple-touch-startup-image" href="{{ asset('images/icons/logo/maskable_icon.png') }}">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+            <twig:block name="meta"></twig:block>
+
+            <twig:block name="assets">
+                <script defer src="{{ asset('admin/assets/bundle.js') }}"></script>
+                <script defer src="{{ asset('admin/assets/scripts.js') }}"></script>
+
+                {{ encore_entry_link_tags('admin') }}
+                {{ encore_entry_script_tags('admin') }}
+            </twig:block>
+        </head>
+        <body class="nk-body bg-theme has-sidebar ui-shady">
+            <twig:DashliteFlashMessage />
+
+            <div class="nk-app-root">
+                <div class="nk-main">
+                    <twig:block name="sidebar"></twig:block>
+                    <div class="nk-wrap">
+                       <twig:block name="navbar">
+                            <twig:DashliteNavbar />
+                        </twig:block>
+                        <div class="nk-content">
+                            <div class="container-fluid">
+                                <div class="nk-content-inner">
+                                   <twig:block name="body">
+                                       <div class="nk-content-body">
+                                           <div class="mx-auto wide-xl">
+                                               <twig:block name="header"></twig:block>
+                                               <div class="nk-block">
+                                                   <twig:block name="content"></twig:block>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </twig:block>
+                                </div>
+                            </div>
+                        </div>
+                        <twig:block name="footer">
+                            <twig:DashliteFooter copyRight="{{ devscast_dashlite.application.copyrights }}"></twig:DashliteFooter>
+                        </twig:block>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>
+{% endapply %}

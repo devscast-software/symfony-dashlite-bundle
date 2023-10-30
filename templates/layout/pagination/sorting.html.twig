@@ -1,0 +1,14 @@
+<a {% for attr, value  in options %} {{ attr }}="{{ value }}"{% endfor %}>
+<span class="float-right">
+    {% if sorted %}
+        {% if direction == 'desc' %}
+            <twig:DashliteIcon name="arrow-up"/>
+        {% else %}
+            <twig:DashliteIcon name="arrow-down"/>
+        {% endif %}
+    {% else %}
+        <twig:DashliteIcon name="opt-alt"/>
+    {% endif %}
+</span>
+{{ title }}
+</a>

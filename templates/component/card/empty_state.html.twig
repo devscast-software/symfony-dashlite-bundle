@@ -1,0 +1,15 @@
+<div class="card card-stretch">
+    <div class="card-body">
+        <div class="d-flex justify-content-center align-center">
+            <div class="nk-block-content nk-error-ld d-flex align-center flex-column">
+                <img src="{{ asset('/icons/empty-box.png') }}" alt="empty state icon" width="80" class="mb-2">
+                <p class="nk-error-description">{{ this.label | default("Aucune donnée disponible pour l'instant") }}</p>
+                {% if this.path != '' and this.action is defined  %}
+                    <a href="{{ this.path }}" class="btn btn-primary">
+                        {{ this.action | default("Ajouter une nouvelle entrée") }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

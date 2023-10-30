@@ -1,0 +1,21 @@
+{% extends '@DevscastDashlite/layout/base.html.twig' %}
+{% set _title = (data is defined and data) ? "Édition #{ _entity | trans([], _domain) }" : "Création #{_entity | trans([], _domain)}" %}
+<twig:block name="title">{{ _title }}</twig:block>
+
+<twig:block name="header">
+    <twig:DashliteHeader :title="_title" backTitle="Toutes les entrées" backPath="{{ _index_url }}">
+        <twig:block name="content">
+            {% if _show_url %}
+                <twig:DashliteHeaderLinkButton name="détails" icon="eye" path="{{ _show_url }}" />
+            {% endif %}
+        </twig:block>
+    </twig:DashliteHeader>
+</twig:block>
+
+<twig:block name="content">
+    <twig:DashliteCard>
+        <twig:block name="content">
+            <twig:DashliteForm :form="form" />
+        </twig:block>
+    </twig:DashliteCard>
+</twig:block>

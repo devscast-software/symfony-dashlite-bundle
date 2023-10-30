@@ -1,0 +1,38 @@
+{% set _data = (data is defined and data.getTotalItemCount is defined) ? data : this.data %}
+
+<div class="nk-block-head nk-block-head-lg">
+    <div class="nk-block-between">
+        <div class="nk-block-head-content">
+            {% if this.backPath and this.backTitle %}
+                <div class="nk-block-head-sub">
+                    <a class="back-to" href="{{ this.backPath }}">
+                        <em class="icon ni ni-arrow-left"></em>
+                        <span>{{ this.backTitle }}</span>
+                    </a>
+                </div>
+            {% endif %}
+            <h3 class="nk-block-title fw-bolder">{{ this.title | raw }}</h3>
+            <div class="nk-block-des fw-normal">
+                <twig:block name="description">
+                    {% if _data is defined and _data.getTotalItemCount is defined and _data.getTotalItemCount > 0 %}
+                        <span class="fw-bolder">{{ _data.getTotalItemCount }}</span> éléments, page <span class="fw-bolder">{{ _data.getCurrentPageNumber }}</span> sur {{ _data.getPageCount }}
+                    {% endif %}
+                </twig:block>
+            </div>
+        </div>
+        <div class="nk-block-head-content">
+            <div class="toggle-wrap nk-block-tools-toggle">
+                <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu">
+                    <twig:DashliteIcon name="menu-alt-r"/>
+                </a>
+                <div class="toggle-expand-content" data-content="pageMenu">
+                    <ul class="nk-block-tools g-3">
+                        <li class="btn-group">
+                            <twig:block name="content"></twig:block>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

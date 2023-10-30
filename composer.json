@@ -1,0 +1,35 @@
+{
+  "name": "devscast/dashlite-bundle",
+  "type": "project",
+  "license": "CC-BY-NC-SA-4.0",
+  "description": "Integration of Dashlite theme in Symfony with Webpack Encore and Symfony UX",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.4",
+    "phpunit/phpunit": "^9.5",
+    "rector/rector": "^0.12.16",
+    "squizlabs/php_codesniffer": "^3.6",
+    "symplify/easy-coding-standard": "^10.1"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Devscast\\Bundle\\DashliteBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Devscast\\Bundle\\DashliteBundle\\Tests\\": "tests/"
+    }
+  }
+}
