@@ -7,12 +7,11 @@ namespace Devscast\Bundle\DashliteBundle\Component\Sidebar\ValueObject;
 use ArrayIterator;
 
 /**
- * Collection of sidebar items
- * Class SidebarItemCollection.
+ * Class Sidebar.
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final class Sidebar implements \IteratorAggregate
+class Sidebar implements \IteratorAggregate
 {
     public function __construct(
         public array $items,
@@ -25,6 +24,7 @@ final class Sidebar implements \IteratorAggregate
                 'header' => Header::fromArray($item),
                 'group' => Group::fromArray($item),
                 'link' => Link::fromArray($item),
+                default => [],
             };
         }, $this->items);
     }

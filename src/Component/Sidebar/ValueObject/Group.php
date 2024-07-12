@@ -7,11 +7,11 @@ namespace Devscast\Bundle\DashliteBundle\Component\Sidebar\ValueObject;
 use Webmozart\Assert\Assert;
 
 /**
- * Class SidebarGroup.
+ * Class Group.
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final class Group
+class Group
 {
     public bool $active = false;
 

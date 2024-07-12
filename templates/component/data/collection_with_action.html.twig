@@ -1,0 +1,15 @@
+{% if this.divider %}
+    <div class="nk-divider divider md"></div>
+{% endif %}
+<div class="nk-block">
+    <div class="nk-block-head nk-block-head-sm nk-block-between">
+        <h5 class="title">{{ this.title }}</h5>
+        {% if this.path %}
+            <twig:Dashlite:Button:FormModal :name="this.name" :icon="this.icon" :path="this.path" />
+        {% endif %}
+    </div>
+
+    <div class="{{ this.divider ? '' : 'profile-ud-list' }}">
+        <twig:block name="content"></twig:block>
+    </div>
+</div>

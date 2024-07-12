@@ -14,7 +14,7 @@
         <style>
             .pattern {
                 background-color: #e5e5f7;
-                background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #9C7FE155, #9C7FE1 );
+                background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 20px ), repeating-linear-gradient( rgba(31, 90, 94, 0.1), rgba(31, 90, 94, 0.2) );
             }
         </style>
     </head>
@@ -26,8 +26,8 @@
                 <div class="nk-content ">
                     <div class="nk-block nk-block-middle wide-xs mx-auto">
                         <div class="nk-block-content nk-error-ld text-center">
-                            <h1 class="nk-error-head">{{ exception.statusCode }}</h1>
-                            <h3 class="nk-error-title">{{ exception.statusText }}</h3>
+                            <img src="{{ asset('/logo/Logo2.png') }}" alt="logo" class="mb-5">
+                            <h3 class="nk-error-title">{{ exception.statusCode }} {{ exception.statusText }}</h3>
                             <p class="nk-error-text">Désolé nous n'arrivons pas à charger cette page...</p>
                             <a href="/" class="btn btn-lg btn-primary mt-2">Rentrer sur terre</a>
                         </div>

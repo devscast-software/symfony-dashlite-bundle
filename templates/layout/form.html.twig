@@ -3,19 +3,19 @@
 <twig:block name="title">{{ _title }}</twig:block>
 
 <twig:block name="header">
-    <twig:DashliteHeader :title="_title" backTitle="Toutes les entrées" backPath="{{ _index_url }}">
+    <twig:Dashlite:Layout:Header :title="_title" backTitle="Toutes les entrées" backPath="{{ _index_url }}">
         <twig:block name="content">
             {% if _show_url %}
-                <twig:DashliteHeaderLinkButton name="détails" icon="eye" path="{{ _show_url }}" />
+                <twig:Dashlite:Button:HeaderLink name="détails" icon="eye" path="{{ _show_url }}" />
             {% endif %}
         </twig:block>
-    </twig:DashliteHeader>
+    </twig:Dashlite:Layout:Header>
 </twig:block>
 
 <twig:block name="content">
-    <twig:DashliteCard>
+    <twig:Dashlite:Card:Card>
         <twig:block name="content">
-            <twig:DashliteForm :form="form" />
+            <twig:Dashlite:Form :form="form" />
         </twig:block>
-    </twig:DashliteCard>
+    </twig:Dashlite:Card:Card>
 </twig:block>

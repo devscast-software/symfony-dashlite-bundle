@@ -18,11 +18,11 @@
                         {{ this.month.value}}
                         {% if this.month.value != 0.0 %}
                             <span class="change {{ this.month.ratio >= 0.0 ? 'up text-success' : 'down text-danger' }}">
-                                    <twig:DashliteIcon name="{{ (this.month.ratio >= 0.0 ? 'arrow-long-up' : 'arrow-long-down') }}" /> {{  this.month.ratio }} %
+                                    <twig:Dashlite:Icon name="{{ (this.month.ratio >= 0.0 ? 'arrow-long-up' : 'arrow-long-down') }}" /> {{  this.month.ratio }} %
                                 </span>
                             {% else %}
                                 <span class="change down">
-                                    <twig:DashliteIcon name="alert-fill-c"/>
+                                    <twig:Dashlite:Icon name="alert-fill-c"/>
                                 </span>
                         {% endif %}
                     </span>
@@ -33,11 +33,11 @@
                         {{ this.week.value }}
                         {% if this.week.value != 0.0 %}
                             <span class="change {{ this.week.ratio >= 0.0 ? 'up text-success' : 'down text-danger' }}">
-                                    <twig:DashliteIcon name="{{ (this.week.ratio >= 0.0 ? 'arrow-long-up' : 'arrow-long-down') }}" /> {{  this.week.ratio }} %
+                                    <twig:Dashlite:Icon name="{{ (this.week.ratio >= 0.0 ? 'arrow-long-up' : 'arrow-long-down') }}" /> {{  this.week.ratio }} %
                                 </span>
                             {% else %}
                             <span class="change down">
-                                <twig:DashliteIcon name="alert-fill-c"/>
+                                <twig:Dashlite:Icon name="alert-fill-c"/>
                             </span>
                         {% endif %}
                     </span>

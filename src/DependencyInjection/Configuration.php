@@ -14,7 +14,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final readonly class Configuration implements ConfigurationInterface
+final class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
@@ -31,16 +31,16 @@ final readonly class Configuration implements ConfigurationInterface
         $root
             ->children()
             ->arrayNode('application')
-                ->addDefaultsIfNotSet()
-                    ->children()
-                        ->scalarNode('name')->defaultValue('Devscast Dashboard')->end()
-                        ->scalarNode('title')->defaultValue('devscast.org')->end()
-                        ->scalarNode('logo_path')->isRequired()->end()
-                        ->scalarNode('icon_path')->isRequired()->end()
-                        ->scalarNode('version')->defaultValue('1.0.0')->end()
-                        ->scalarNode('copyrights')->defaultValue('')->end()
-                    ->end()
-                ->end()
+            ->addDefaultsIfNotSet()
+            ->children()
+            ->scalarNode('name')->defaultValue('Devscast Dashboard')->end()
+            ->scalarNode('title')->defaultValue('devscast.org')->end()
+            ->scalarNode('logo_path')->isRequired()->end()
+            ->scalarNode('icon_path')->isRequired()->end()
+            ->scalarNode('version')->defaultValue('1.0.0')->end()
+            ->scalarNode('copyrights')->defaultValue('')->end()
+            ->end()
+            ->end()
             ->end();
     }
 }

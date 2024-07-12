@@ -16,17 +16,12 @@
                     {% endif %}
                 </div>
                 <div class="info">
-                    {% if this.ratio %}
-                        {% if this.value != 0.0 %}
+                    {% if this.ratio is defined %}
+                        {% if this.ratio != 0.0 %}
                             <span class="change {{ this.ratio >= 0.0 ? 'up text-success' : 'down text-danger' }}">
-                                <twig:DashliteIcon name="{{ (this.ratio >= 0.0 ? 'arrow-long-up' : 'arrow-long-down') }}" /> {{  this.ratio }} %
+                                <twig:Dashlite:Icon name="{{ (this.ratio >= 0.0 ? 'arrow-long-up' : 'arrow-long-down') }}" /> {{  this.ratio }} %
                             </span>
                             <span> vs. la période passée</span>
-                        {% else %}
-                            <span class="change down">
-                                <twig:DashliteIcon name="alert-fill-c"/>
-                            </span>
-                            <span class="text-danger"> Aucune nouvelle donnée</span>
                         {% endif %}
                     {% else %}
                         <span>{{ this.info }}</span>

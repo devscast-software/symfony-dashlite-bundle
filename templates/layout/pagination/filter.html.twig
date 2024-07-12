@@ -1,7 +1,7 @@
 <form method="get" action="{{ action }}" enctype="application/x-www-form-urlencoded">
     <div class="form-control-wrap">
         <div class="form-icon form-icon-right">
-            <twig:DashliteIcon name="search"/>
+            <twig:Dashlite:Icon name="search"/>
         </div>
         <input type="hidden" name="filter_name" value="{{ fields|keys|first }}"/>
         <input type="search" name="filter_value" value="{{ selectedValue }}" class="form-control" placeholder="recherche..." aria-label="search">

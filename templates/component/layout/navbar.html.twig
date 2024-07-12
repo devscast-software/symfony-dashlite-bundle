@@ -3,7 +3,7 @@
         <div class="nk-header-wrap">
             <div class="nk-menu-trigger d-xl-none ml-n1">
                 <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu">
-                    <twig:DashliteIcon name="menu"/>
+                    <twig:Dashlite:Icon name="menu"/>
                 </a>
             </div>
             <div class="nk-header-brand">
@@ -21,7 +21,7 @@
                                <a href="#" class="dropdown-toggle mr-n1" data-bs-toggle="dropdown" aria-expanded="false">
                                    <div class="user-toggle">
                                        <div class="user-avatar sm">
-                                           <twig:DashliteIcon name="user"/>
+                                           <twig:Dashlite:Icon name="user"/>
                                        </div>
                                        <div class="user-info d-none d-xl-block">
                                            <div class="user-status user-status-verified">{{ app.user.roles | last | trans([], 'messages') }}</div>
@@ -33,7 +33,7 @@
                                    <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                        <div class="user-card">
                                            <div class="user-avatar">
-                                               <twig:DashliteIcon name="user"/>
+                                               <twig:Dashlite:Icon name="user"/>
                                            </div>
                                            <div class="user-info">
                                                <span class="sub-text">{{ app.user.userIdentifier }}</span>
@@ -45,19 +45,12 @@
                                        <ul class="link-list">
                                            <li>
                                                <a href="#" title="Paramètres">
-                                                   <twig:DashliteIcon name="setting"/>
+                                                   <twig:Dashlite:Icon name="setting"/>
                                                    <span>Paramètres</span>
                                                </a>
                                            </li>
                                            <li>
-                                               <a class="dark-switch" href="#">
-                                                   <twig:DashliteIcon name="moon"/>
-                                                   <span>Mode Sombre</span>
-                                               </a>
-                                           </li>
-                                           <li>
                                                <a href="{{ logout_url('main') }}" title="Déconnexion" aria-label="Déconnexion">
-                                                   <twig:DashliteIcon name="signout"/>
                                                    <span>Déconnexion</span>
                                                </a>
                                            </li>

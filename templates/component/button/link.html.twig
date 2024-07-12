@@ -11,13 +11,13 @@
 >
     {% if not this.iconOnly %}
         {% if this.icon and this.iconPosition == 'left' %}
-            <twig:DashliteIcon name="{{ this.icon }}"/>
+            <twig:Dashlite:Icon name="{{ this.icon }}"/>
         {% endif %}
         <span>{{ this.name }}</span>
         {% if this.icon and this.iconPosition == 'right' %}
-            <twig:DashliteIcon name="{{ this.icon }}"/>
+            <twig:Dashlite:Icon name="{{ this.icon }}"/>
         {% endif %}
     {% else %}
-        <twig:DashliteIcon name="{{ this.icon }}"/>
+        <twig:Dashlite:Icon name="{{ this.icon }}"/>
     {% endif %}
 </a>

@@ -2,5 +2,5 @@
     <span>{{ this.name }}</span>
 </a>
 {% if this.url and this.name %}
-    <twig:DashliteContentModal id="{{ this.id }}" url="{{ this.url }}" action="{{ this.action }}" />
+    <twig:Dashlite:Card:ContentModal id="{{ this.id }}" url="{{ this.url }}" action="{{ this.action }}" />
 {% endif %}

@@ -14,9 +14,10 @@ use Twig\TwigFunction;
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final class TwigLinkExtension extends AbstractExtension
+class TwigLinkExtension extends AbstractExtension
 {
     private string $route;
+
     private string $path;
 
     public function __construct(
@@ -24,7 +25,10 @@ final class TwigLinkExtension extends AbstractExtension
         private readonly RouterInterface $router
     ) {
         $this->path = $stack->getCurrentRequest()?->getPathInfo() ?? '';
-        $this->route = $stack->getCurrentRequest()?->attributes?->get('_route') ?? '';
+
+        /** @var string $route */
+        $route = $stack->getCurrentRequest()?->attributes?->get('_route') ?? '';
+        $this->route = $route;
     }
 
     public function getFunctions(): array
@@ -48,7 +52,7 @@ final class TwigLinkExtension extends AbstractExtension
             }
         } elseif (is_string($path)) {
             if (
-                (true === $relative && $this->isCurrentPathContains($path)) ||
+                ($relative === true && $this->isCurrentPathContains($path)) ||
                 $this->isCurrentPathMatches($path)
             ) {
                 return $activeClass;

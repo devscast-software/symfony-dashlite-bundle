@@ -115,7 +115,7 @@ img {
 
 .logo {
   height: auto;
-  width: 120px;
+  width: 200px;
 }
 
 /* Body */
@@ -245,12 +245,12 @@ img {
 
 .button-blue,
 .button-primary {
-  background-color: rgb(41, 168, 153);
-  border-bottom: 8px solid rgb(41, 168, 153);
-  border-left: 18px solid rgb(41, 168, 153);
-  border-right: 18px solid rgb(41, 168, 153);
-  border-top: 8px solid rgb(41, 168, 153);
-  color: rgb(243, 243, 243);
+  background-color: rgb(31, 90, 94);
+  border-bottom: 8px solid rgb(31, 90, 94);
+  border-left: 18px solid rgb(31, 90, 94);
+  border-right: 18px solid rgb(31, 90, 94);
+  border-top: 8px solid rgb(31, 90, 94);
+  color: rgb(255, 255, 255);
 }
 
 .button-green,

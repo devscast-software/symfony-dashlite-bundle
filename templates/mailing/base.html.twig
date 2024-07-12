@@ -33,7 +33,7 @@
                     <tr>
                         <td class="header">
                             <a href="{{ absolute_url('/') }}" style="display: inline-block;">
-                                <img src="{{ absolute_url(asset(devscast_dashlite.application.logo_path)) }}" class="logo" alt="Devscast Logo" width="250px">
+                                <img src="{{ absolute_url(asset('/logo/Logo1.png')) }}" class="logo" alt="Devscast Logo">
                             </a>
                         </td>
                         <!-- Email Body -->
@@ -47,20 +47,7 @@
 
                                         <twig:block name="signature">
                                             Cordialement, <br>
-                                            L'équipe Lushitrap Music.
-                                        </twig:block>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <table class="footer" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
-                                <tr>
-                                    <td class="content-cell" align="center">
-                                        <twig:block name="footer">
-                                            © 2018 - {{ 'now' | date('Y')}} Lushitrap Music. Tous droits réservés.
+                                            L'équipe {{ devscast_dashlite.application.name }}.
                                         </twig:block>
                                     </td>
                                 </tr>

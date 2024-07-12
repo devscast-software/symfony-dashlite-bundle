@@ -22,22 +22,22 @@
             <twig:block name="meta"></twig:block>
 
             <twig:block name="assets">
-                <script defer src="{{ asset('admin/assets/bundle.js') }}"></script>
-                <script defer src="{{ asset('admin/assets/scripts.js') }}"></script>
+                <script defer src="{{ asset('admin/assets/bundle.js') }}" data-turbo-track="reload"></script>
+                <script defer src="{{ asset('admin/assets/scripts.js') }}" data-turbo-track="reload"></script>
 
                 {{ encore_entry_link_tags('admin') }}
                 {{ encore_entry_script_tags('admin') }}
             </twig:block>
         </head>
         <body class="nk-body bg-theme has-sidebar ui-shady">
-            <twig:DashliteFlashMessage />
+            <twig:Dashlite:FlashMessage />
 
             <div class="nk-app-root">
                 <div class="nk-main">
                     <twig:block name="sidebar"></twig:block>
                     <div class="nk-wrap">
                        <twig:block name="navbar">
-                            <twig:DashliteNavbar />
+                            <twig:Dashlite:Layout:Navbar />
                         </twig:block>
                         <div class="nk-content">
                             <div class="container-fluid">
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                         <twig:block name="footer">
-                            <twig:DashliteFooter copyRight="{{ devscast_dashlite.application.copyrights }}"></twig:DashliteFooter>
+                            <twig:Dashlite:Layout:Footer copyRight="{{ devscast_dashlite.application.copyrights }}" />
                         </twig:block>
                     </div>
                 </div>

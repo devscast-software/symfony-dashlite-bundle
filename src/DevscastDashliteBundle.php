@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final class DevscastDashliteBundle extends AbstractBundle
+class DevscastDashliteBundle extends AbstractBundle
 {
     public function build(ContainerBuilder $container): void
     {

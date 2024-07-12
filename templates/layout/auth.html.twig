@@ -17,7 +17,7 @@
     </head>
 
     <body class="nk-body bg-white npc-default pg-auth">
-    <twig:DashliteFlashMessage />
+    <twig:Dashlite:FlashMessage />
     <div class="nk-app-root">
         <div class="nk-main ">
             <div class="nk-wrap nk-wrap-nosidebar">
@@ -28,15 +28,15 @@
                                 <div class="brand-logo pb-5">
                                     <twig:block name="logo">
                                         <a href="/" class="logo-link">
-                                            <img class="logo-img logo-img-lg" width="50%" src="{{ asset(devscast_dashlite.application.logo_path) }}" alt="logo">
+                                            <img class="logo-img logo-img-lg" width="50%" src="{{ asset('logo/Logo1.png') }}" alt="logo">
                                         </a>
                                     </twig:block>
                                 </div>
                                 <twig:block name="body"></twig:block>
                             </div>
                             <div class="nk-block nk-auth-footer">
-                                <div class="mt-3"><p>© {{ 'now' | date('Y') }} Developed by <a href="https://devscast.tech">Devscast</a> .</p></div>
-                            </div>
+                                <div class="mt-3"><p>© {{ 'now' | date('Y') }} Developed by <a href="https://devscast.tech">Devscast Software</a> .</p></div>
+                            </div>d
                         </div>
                         <div id="bg" class="nk-split-content nk-split-stretch bg-abstract" {{ stimulus_controller("background") }}></div>
                     </div>

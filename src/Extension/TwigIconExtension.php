@@ -17,7 +17,7 @@ use Twig\TwigFunction;
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final class TwigIconExtension extends AbstractExtension
+class TwigIconExtension extends AbstractExtension
 {
     private const FLAG_PROVIDER_URL = 'https://flagcdn.com/%s/%s.png';
 
@@ -56,7 +56,7 @@ final class TwigIconExtension extends AbstractExtension
 
     public function flag(?string $name = null, string $size = '32x24'): ?string
     {
-        if (null === $name) {
+        if ($name === null) {
             return null;
         }
 

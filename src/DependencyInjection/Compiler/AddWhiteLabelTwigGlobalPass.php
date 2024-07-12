@@ -13,11 +13,11 @@ use Symfony\Component\DependencyInjection\Reference;
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final readonly class AddWhiteLabelTwigGlobalPass implements CompilerPassInterface
+class AddWhiteLabelTwigGlobalPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        if (false === $container->hasDefinition('twig')) {
+        if ($container->hasDefinition('twig') === false) {
             return;
         }
 

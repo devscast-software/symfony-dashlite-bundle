@@ -13,7 +13,7 @@ use Twig\TwigFilter;
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final class TwigBadgeExtension extends AbstractExtension
+class TwigBadgeExtension extends AbstractExtension
 {
     public function __construct(
         private readonly TranslatorInterface $translator
@@ -37,7 +37,7 @@ final class TwigBadgeExtension extends AbstractExtension
         $true ??= 'OUI';
         $false ??= 'NON';
 
-        if (1 === $value) {
+        if ($value === 1) {
             return <<< HTML
                 <span class="text-success fw-bold">{$true}</span>
             HTML;
@@ -48,7 +48,7 @@ final class TwigBadgeExtension extends AbstractExtension
             HTML;
     }
 
-    public function badge(string $label, array $states = [], string $default = 'primary', string $style = 'dot'): string
+    public function badge(string $label, array $states = [], string $default = 'primary', string $style = 'dim'): string
     {
         $label = $this->translator->trans($label);
         $state = match (isset($states[$label])) {

@@ -7,11 +7,11 @@ namespace Devscast\Bundle\DashliteBundle\Component\Sidebar\ValueObject;
 use Webmozart\Assert\Assert;
 
 /**
- * Class SidebarItem.
+ * Class Item.
  *
  * @author bernard-ng <bernard@devscast.tech>
  */
-final class Link
+class Link
 {
     public ?Group $parent = null;
 
