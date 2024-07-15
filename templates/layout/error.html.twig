@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
+        <link rel="shortcut icon" href="{{ asset(devscast_dashlite.application.icon_path) }}">
         <title>{{ exception.statusCode }} {{ exception.statusText }} | {{ devscast_dashlite.application.name }}</title>
         <twig:block name="assets">
             {{ encore_entry_link_tags('admin') }}
@@ -14,7 +14,7 @@
         <style>
             .pattern {
                 background-color: #e5e5f7;
-                background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 20px ), repeating-linear-gradient( rgba(31, 90, 94, 0.1), rgba(31, 90, 94, 0.2) );
+                background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 20px ), repeating-linear-gradient( rgba(31, 90, 94, 0.1), rgb(27, 58, 103));
             }
         </style>
     </head>
@@ -26,10 +26,10 @@
                 <div class="nk-content ">
                     <div class="nk-block nk-block-middle wide-xs mx-auto">
                         <div class="nk-block-content nk-error-ld text-center">
-                            <img src="{{ asset('/logo/Logo2.png') }}" alt="logo" class="mb-5">
+                            <img src="{{ asset(devscast_dashlite.application.logo_path) }}" alt="logo" class="mb-5">
                             <h3 class="nk-error-title">{{ exception.statusCode }} {{ exception.statusText }}</h3>
-                            <p class="nk-error-text">Désolé nous n'arrivons pas à charger cette page...</p>
-                            <a href="/" class="btn btn-lg btn-primary mt-2">Rentrer sur terre</a>
+                            <p class="nk-error-text">Désolé, nous n'arrivons pas à charger cette page...</p>
+                            <a href="/" class="btn btn-lg btn-primary mt-2">Revenir à l'accueil</a>
                         </div>
                     </div>
                 </div>

@@ -39,6 +39,7 @@ final class Configuration implements ConfigurationInterface
             ->scalarNode('icon_path')->isRequired()->end()
             ->scalarNode('version')->defaultValue('1.0.0')->end()
             ->scalarNode('copyrights')->defaultValue('')->end()
+            ->scalarNode('theme_color')->defaultValue('#000000')->end()
             ->end()
             ->end()
             ->end();

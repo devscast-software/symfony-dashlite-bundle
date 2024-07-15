@@ -5,19 +5,21 @@
             <meta charset="utf-8">
             <meta name="author" content="devscast">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <link rel="shortcut icon" href="{{ asset('/images/logo.png') }}">
-            <title>{% block title %}{% endblock %} | administration | {{ devscast_dashlite.application.name }}</title>
+            <link rel="shortcut icon" href="{{ asset(devscast_dashlite.application.icon_path) }}">
+            <title>{% block title %}{% endblock %} | {{ devscast_dashlite.application.name }}</title>
 
-            {# PWA support #}
-            <meta name="theme-color" content="#05FFBA">
-            <link rel="manifest" href="{{ asset('manifest.json') }}">
+            <twig:block name="pwa">
+                {# PWA support #}
+                <meta name="theme-color" content="#05FFBA">
+                <link rel="manifest" href="{{ asset('manifest.json') }}">
 
-            {# PWA Support IOS #}
-            <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('images/icons/logo/maskable_icon_x192.png') }}">
-            <link rel="apple-touch-icon" sizes="512x512" href="{{ asset('images/icons/logo/maskable_icon_x512.png') }}">
-            <link rel="apple-touch-startup-image" href="{{ asset('images/icons/logo/maskable_icon.png') }}">
-            <meta name="apple-mobile-web-app-capable" content="yes">
-            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                {# PWA Support IOS #}
+                <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('images/icons/logo/maskable_icon_x192.png') }}">
+                <link rel="apple-touch-icon" sizes="512x512" href="{{ asset('images/icons/logo/maskable_icon_x512.png') }}">
+                <link rel="apple-touch-startup-image" href="{{ asset('images/icons/logo/maskable_icon.png') }}">
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            </twig:block>
 
             <twig:block name="meta"></twig:block>
 
